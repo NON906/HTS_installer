@@ -1,0 +1,61 @@
+diff -u -r segment_adapt_windows-v1.0_original/segment_adapt.pl segment_adapt_windows-v1.0/segment_adapt.pl
+--- segment_adapt_windows-v1.0_original/segment_adapt.pl	2012-05-05 13:38:24.000000000 +0900
++++ segment_adapt_windows-v1.0/segment_adapt.pl	2017-04-27 13:40:03.234758930 +0900
+@@ -5,7 +5,7 @@
+ $label = $speaker . "/labels";
+ @abc = (a);
+ ## julius4 executable
+-$julius4bin="./bin/julius-4.2.1.exe";
++$julius4bin="../julius/julius/julius";
+ 
+ ## acoustic model
+ $hmmdefs="./models/hmmdefs_monof_mix16_gid.binhmm"; # monophone model
+@@ -26,10 +26,7 @@
+ 	$abcnum += 1;
+ }
+ if($abcnum==1){
+-	print "Error: cannot open wav file \n";
+-	print "push key\n";
+-	<STDIN>;
+-	die;
++	last;
+ }
+ if($filenum[1]==9){
+ 	$filenum[0] +=1;
+@@ -40,7 +37,7 @@
+ $filename = $abc[$abcnum].$filenum[0].$filenum[1];
+ $monofile = $label."/mono/${filename}.lab";
+ $fullfile = $label."/full/${filename}.lab";
+-$speechfile = $speaker."/${filename}.wav";
++$speechfile = $speaker."/${filename}.raw";
+ print "Start segmentation $filename \n";
+ if (-r $speechfile) {
+ #### generate speech grammar 'tmp.dfa' and 'tmp.dict' from transcription
+@@ -74,7 +71,7 @@
+ 		s/ //g;
+ 		$line = 1;
+     }
+-    push(words, $_);
++    push(@words, ($_));
+ }
+ close(TRANS_MONO);
+ $num = $#words;
+@@ -113,7 +110,7 @@
+ }
+ 
+ #### execute Julius4 and store the output to log
+-$command = "echo $speechfile | $julius4bin -h $hmmdefs -dfa $TMPDIR/tmp.dfa -v $TMPDIR/tmp.dict -input file -spmodel null -48 -palign";
++$command = "echo $speechfile | $julius4bin -h $hmmdefs -dfa $TMPDIR/tmp.dfa -v $TMPDIR/tmp.dict -input file -spmodel null -palign";
+ system("$command > ${monofile}.log");
+ 
+ #### remove temporary file
+@@ -172,6 +169,8 @@
+ close(TRANS_MONO);
+ close(TRANS_FULL);
+ unlink "${monofile}.log";
+-system("echo $speechfile | sox -t wav $speechfile -t raw -L -2 -s ${speaker}/data/raw/${filename}.raw");
++@vol = `sox -r 16k -e signed-integer -b 16 -B $speechfile -n stat -v 2>&1`;
++$volGain = $vol[0] / 2.86;
++system("sox -r 16k -e signed-integer -b 16 -B $speechfile -r 48k -L ${speaker}/data/raw/${filename}.raw vol $volGain");
+ }
+ }
