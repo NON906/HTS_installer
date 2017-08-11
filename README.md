@@ -1,43 +1,46 @@
 # HTS_installer
 
-Open JTalk‚È‚Ç‚ÅŽg—p‚³‚ê‚éA‰¹‹¿ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹ihtkvoicej‚ð¶¬A‚¨‚æ‚Ñ‚»‚ÌŠÂ‹«‚ð\’z‚·‚éƒVƒFƒ‹ƒXƒNƒŠƒvƒg‚Å‚·B
-i’F‚±‚ÌƒXƒNƒŠƒvƒg‚ðŽÀs‚·‚é‚ÆAŽ©“®“I‚É‚¢‚­‚Â‚©‚ÌƒvƒƒOƒ‰ƒ€‚ðƒ_ƒEƒ“ƒ[ƒh‚³‚ê‚Ü‚·B
-‚±‚ê‚ç‚ÌƒvƒƒOƒ‰ƒ€‚Ìƒ‰ƒCƒZƒ“ƒXEŽg—pðŒ‚É‚Â‚¢‚Ä‚ÍA‚»‚ê‚¼‚ê‚ÌƒvƒƒOƒ‰ƒ€‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢j
+Open JTalkãªã©ã§ä½¿ç”¨ã•ã‚Œã‚‹ã€éŸ³éŸ¿ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ï¼ˆhtkvoiceï¼‰ã‚’ç”Ÿæˆã€ãŠã‚ˆã³ãã®ç’°å¢ƒã‚’æ§‹ç¯‰ã™ã‚‹ã‚·ã‚§ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§ã™ã€‚  
+ï¼ˆæ³¨ï¼šã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å®Ÿè¡Œã™ã‚‹ã¨ã€è‡ªå‹•çš„ã«ã„ãã¤ã‹ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã•ã‚Œã¾ã™ã€‚  
+ã“ã‚Œã‚‰ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ãƒ»ä½¿ç”¨æ¡ä»¶ã«ã¤ã„ã¦ã¯ã€ãã‚Œãžã‚Œã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’å‚ç…§ã—ã¦ãã ã•ã„ï¼‰  
 
-## “®ìŠÂ‹«
+## å‹•ä½œç’°å¢ƒ
 
 Ubuntu 16.04
 
-## ƒCƒ“ƒXƒg[ƒ‹•û–@
+## ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•
 
-1. ˆÈ‰º‚ÌƒTƒCƒg‚Ì Stable release (3.4.1) „ Linux/Unix downloads „ HTK source code ‚©‚ç HTK-3.4.1.tar.gz ‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä‚­‚¾‚³‚¢B
-[http://htk.eng.cam.ac.uk/download.shtml](http://htk.eng.cam.ac.uk/download.shtml)
-iƒ_ƒEƒ“ƒ[ƒh‚É‚Íƒ†[ƒU[“o˜^‚ª•K—v‚Å‚·j
+1. ä»¥ä¸‹ã®ã‚µã‚¤ãƒˆã® Stable release (3.4.1) ï¼ž Linux/Unix downloads ï¼ž HTK source code ã‹ã‚‰ HTK-3.4.1.tar.gz ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦ãã ã•ã„ã€‚  
+[http://htk.eng.cam.ac.uk/download.shtml](http://htk.eng.cam.ac.uk/download.shtml)  
+ï¼ˆãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã«ã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼ç™»éŒ²ãŒå¿…è¦ã§ã™ï¼‰
 
-2. ˆÈ‰º‚ÌƒTƒCƒg‚Ì HDecode Download Stable Release (3.4.1) „ Linux/Unix downloads ‚©‚ç HDecode-3.4.1.tar.gz ‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä‚­‚¾‚³‚¢B
-[http://htk.eng.cam.ac.uk/prot-docs/hdecode.shtml](http://htk.eng.cam.ac.uk/prot-docs/hdecode.shtml)
-iƒ_ƒEƒ“ƒ[ƒh‚É‚Íƒ†[ƒU[“o˜^‚ª•K—v‚Å‚·j
 
-3. git clone‚µ‚Ü‚·B
+2. ä»¥ä¸‹ã®ã‚µã‚¤ãƒˆã® HDecode Download Stable Release (3.4.1) ï¼ž Linux/Unix downloads ã‹ã‚‰ HDecode-3.4.1.tar.gz ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦ãã ã•ã„ã€‚  
+[http://htk.eng.cam.ac.uk/prot-docs/hdecode.shtml](http://htk.eng.cam.ac.uk/prot-docs/hdecode.shtml)  
+ï¼ˆãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã«ã¯ãƒ¦ãƒ¼ã‚¶ãƒ¼ç™»éŒ²ãŒå¿…è¦ã§ã™ï¼‰
+
+
+3. git cloneã—ã¾ã™ã€‚
 ```
 git clone https://github.com/NON906/HTS_installer.git
 ```
 
-4. ˆÈ‰º‚ÌƒRƒ}ƒ“ƒh‚ÅƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
+
+4. ä»¥ä¸‹ã®ã‚³ãƒžãƒ³ãƒ‰ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã™ã€‚
 ```
 cd HTS_installer/scripts
 sh install.sh /path/to/HTK-3.4.1.tar.gz /path/to/HDecode-3.4.1.tar.gz
 ```
-i /path/to/ ‚É‚Í HTK-3.4.1.tar.gz ‚â HDecode-3.4.1.tar.gz ‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚½ƒfƒBƒŒƒNƒgƒŠ‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢j
-iƒCƒ“ƒXƒg[ƒ‹‚É‚Í”ŽžŠÔ’ö“x‚©‚©‚è‚Ü‚·j
+ï¼ˆ /path/to/ ã«ã¯ HTK-3.4.1.tar.gz ã‚„ HDecode-3.4.1.tar.gz ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ãŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’æŒ‡å®šã—ã¦ãã ã•ã„ï¼‰  
+ï¼ˆã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã«ã¯æ•°æ™‚é–“ç¨‹åº¦ã‹ã‹ã‚Šã¾ã™ï¼‰
 
-## ŽÀs•û–@
+## å®Ÿè¡Œæ–¹æ³•
 
 ```
 cd HTS_installer/scripts
-sh make_htsvoice.sh ‰¹ºƒtƒ@ƒCƒ‹‚ÌƒfƒBƒŒƒNƒgƒŠ /path/to/result.htsvoice
+sh make_htsvoice.sh éŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª /path/to/result.htsvoice
 ```
-i‰¹ºƒtƒ@ƒCƒ‹‚ÌƒfƒBƒŒƒNƒgƒŠ ‚Æ‚ÍA‰¹Œ¹‚Æ‚È‚éwav‚âmp3‚ª“ü‚Á‚Ä‚¢‚éƒfƒBƒŒƒNƒgƒŠ‚Ì‚±‚Æ‚Å‚·j
-i¶¬‚µ‚½‰¹‹¿ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹‚Í /path/to/result.htsvoice ‚É•Û‘¶‚³‚ê‚Ü‚·j
-iŽÀs’†‚Í‘½‚­‚Ìƒƒ‚ƒŠ—Ìˆæ‚ðŽg—p‚µ‚Ü‚·‚Ì‚ÅA‚ ‚ç‚©‚¶‚ßswapƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚¨‚­‚±‚Æ‚ð‚¨‚·‚·‚ß‚µ‚Ü‚·j
-iŠ®—¹‚Ü‚Å”ŽžŠÔ`”“ú’ö“x‚©‚©‚è‚Ü‚·j
+ï¼ˆéŸ³å£°ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª ã¨ã¯ã€éŸ³æºã¨ãªã‚‹wavã‚„mp3ãŒå…¥ã£ã¦ã„ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ã“ã¨ã§ã™ï¼‰  
+ï¼ˆç”Ÿæˆã—ãŸéŸ³éŸ¿ãƒ¢ãƒ‡ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã¯ /path/to/result.htsvoice ã«ä¿å­˜ã•ã‚Œã¾ã™ï¼‰  
+ï¼ˆå®Ÿè¡Œä¸­ã¯å¤šãã®ãƒ¡ãƒ¢ãƒªé ˜åŸŸã‚’ä½¿ç”¨ã—ã¾ã™ã®ã§ã€ã‚ã‚‰ã‹ã˜ã‚swapãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãŠãã“ã¨ã‚’ãŠã™ã™ã‚ã—ã¾ã™ï¼‰  
+ï¼ˆå®Œäº†ã¾ã§æ•°æ™‚é–“ï½žæ•°æ—¥ç¨‹åº¦ã‹ã‹ã‚Šã¾ã™ï¼‰
