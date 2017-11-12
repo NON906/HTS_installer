@@ -17,7 +17,7 @@ cd tools
 TOOLSDIR=`pwd`
 
 sudo apt-get update
-sudo apt-get -y install sox libsox-fmt-all libpulse-dev libasound-dev hts-voice-nitech-jp-atr503-m001 cmake csh libx11-dev
+sudo apt-get -y install sox libsox-fmt-all libpulse-dev libasound-dev hts-voice-nitech-jp-atr503-m001 cmake csh libx11-dev flac jq
 
 wget https://github.com/julius-speech/julius/archive/v4.4.2.1.tar.gz
 tar zxvf v4.4.2.1.tar.gz
@@ -79,9 +79,6 @@ cd ..
 
 wget https://downloads.sourceforge.net/project/open-jtalk/Open%20JTalk/open_jtalk-1.10/open_jtalk-1.10.tar.gz
 tar zxvf open_jtalk-1.10.tar.gz
-cd ..
-sh make_new_dic.sh
-cd tools
 mkdir open_jtalk
 cd open_jtalk-1.10/
 ./configure --prefix=$TOOLSDIR/open_jtalk --with-hts-engine-header-path=$TOOLSDIR/hts_engine_API/include --with-hts-engine-library-path=$TOOLSDIR/hts_engine_API/lib
@@ -89,13 +86,15 @@ make
 make install
 cd ..
 
-wget https://github.com/NON906/splitAndGetLabel/archive/v0.1.tar.gz
-tar zxvf v0.1.tar.gz
-mv splitAndGetLabel-0.1 splitAndGetLabel
+wget https://github.com/NON906/splitAndGetLabel/archive/v0.2.tar.gz
+tar zxvf v0.2.tar.gz
+mv splitAndGetLabel-0.2 splitAndGetLabel
 cd splitAndGetLabel
 mkdir build
 cd build
 cmake ..
 make
 cd ../..
+
+rm -f v4.4.2.1.tar.gz dictation-kit-v4.4.zip segment_adapt_windows-v1.0.zip HTS-2.3_for_HTK-3.4.1.tar.bz2 hts_engine_API-1.10.tar.gz SPTK-3.10.tar.gz HTS-demo_NIT-ATR503-M001.tar.bz2 open_jtalk-1.10.tar.gz v0.2.tar.gz
 

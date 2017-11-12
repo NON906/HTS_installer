@@ -49,13 +49,11 @@ diff -u -r segment_adapt_windows-v1.0_original/segment_adapt.pl segment_adapt_wi
  system("$command > ${monofile}.log");
  
  #### remove temporary file
-@@ -172,6 +169,8 @@
+@@ -172,6 +169,6 @@
  close(TRANS_MONO);
  close(TRANS_FULL);
  unlink "${monofile}.log";
 -system("echo $speechfile | sox -t wav $speechfile -t raw -L -2 -s ${speaker}/data/raw/${filename}.raw");
-+@vol = `sox -r 16k -e signed-integer -b 16 -B $speechfile -n stat -v 2>&1`;
-+$volGain = $vol[0] / 2.86;
-+system("sox -r 16k -e signed-integer -b 16 -B $speechfile -r 48k -L ${speaker}/data/raw/${filename}.raw vol $volGain");
++system("sox -r 16k -e signed-integer -b 16 -B $speechfile -r 48k -L ${speaker}/data/raw/${filename}.raw");
  }
  }

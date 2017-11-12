@@ -64,3 +64,8 @@ done
 
 mv -f tmp.csv open_jtalk-1.10/mecab-naist-jdic/naist-jdic.csv
 
+cd open_jtalk-1.10/
+./configure --prefix=$TOOLSDIR/open_jtalk --with-hts-engine-header-path=$TOOLSDIR/hts_engine_API/include --with-hts-engine-library-path=$TOOLSDIR/hts_engine_API/lib
+make
+make install
+cd ..

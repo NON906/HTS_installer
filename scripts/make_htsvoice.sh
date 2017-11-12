@@ -1,20 +1,44 @@
 #!/bin/sh
 
-if [ $# -lt 2 -o $# -gt 3 ]; then
-  echo "Usage: $0 INPUTDIRPATH HTSVOICEPATH [BASEHTSVOICEPATH]"
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 [-G APIKEY] INPUTDIRPATH HTSVOICEPATH [OpenJTalkOption] [BASEHTSVOICEPATH]"
   exit -1
 fi
 
+APIMODE="J"  #J:julius, G:google cloud speech API
+APIKEY=""
+OPTIONS=""
+
 STARTPATH=`pwd`
 
-INPUTDIRPATH=$(cd "$1" && pwd)
-cd "$STARTPATH"
-HTSVOICEPATH="$(cd $(dirname "$2") && pwd)/$(basename "$2")"
-cd "$STARTPATH"
-if [ $# -lt 3 ]; then
-	BASEHTSVOICEPATH="/usr/share/hts-voice/nitech-jp-atr503-m001/nitech_jp_atr503_m001.htsvoice"
+if [ $1 = "-G" ]; then
+  APIMODE="G"
+  APIKEY=$2
+  INPUTDIRPATH=$(cd "$3" && pwd)
+  cd "$STARTPATH"
+  HTSVOICEPATH="$(cd $(dirname "$4") && pwd)/$(basename "$4")"
+  cd "$STARTPATH"
+  shift 4
 else
-	BASEHTSVOICEPATH="$(cd $(dirname "$3") && pwd)/$(basename "$3")"
+  INPUTDIRPATH=$(cd "$1" && pwd)
+  cd "$STARTPATH"
+  HTSVOICEPATH="$(cd $(dirname "$2") && pwd)/$(basename "$2")"
+  cd "$STARTPATH"
+  shift 2
+fi
+mFlag=0
+while [ $# -ge 2 -a "$(echo "$1" | cut -c 1)" = "-" ]
+do
+  OPTIONS=" ${OPTIONS} $1 $2 "
+  if [ $1 = "-m" ]; then
+    mFlag=1
+  fi
+  shift 2
+done
+if [ $# -lt 1 ]; then
+  OPTIONS=" ${OPTIONS} -m /usr/share/hts-voice/nitech-jp-atr503-m001/nitech_jp_atr503_m001.htsvoice "
+elif [ ${mFlag} -eq 0 ]; then
+  OPTIONS=" ${OPTIONS} -m \"$(cd $(dirname "$1") && pwd)/$(basename "$1")\" "
 fi
 cd "$STARTPATH"
 
@@ -38,9 +62,14 @@ for file in `ls "$INPUTDIRPATH"`
 do
   vol=`sox "${INPUTDIRPATH}/${file}" -n stat -v 2>&1`
   volGain=`echo "scale=9; ${vol} / 2.86" | bc`
-  sox "${INPUTDIRPATH}/${file}" -t raw -r 16k -e signed-integer -b 16 -c 1 -B "tmp/${file}.raw" vol ${volGain}
+
+  sox "${INPUTDIRPATH}/${file}" -t raw -r 16k -e signed-integer -b 16 -c 1 -B "$(pwd)/tmp/${file}.raw" vol ${volGain}
 done
-./splitAndGetLabel "$BASEHTSVOICEPATH"
+if [ ${APIMODE} = "J" ] ; then
+  ./splitAndGetLabel ${OPTIONS}
+else
+  ./splitAndGetLabel -${APIMODE} ${APIKEY} ${OPTIONS}
+fi
 
 cd ../../HTS-demo_NIT-ATR503-M001/
 fileCount=`find data/raw -type f | wc -l`
